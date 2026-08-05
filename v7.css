@@ -713,3 +713,97 @@ html {
     border-bottom: 0;
   }
 }
+
+/* v2.5: scene x track matrix */
+.scene-matrix {
+  margin-top: 26px;
+  border: 1px solid var(--v1-line-strong);
+  background: var(--surface-raised, #fffefa);
+}
+
+.scene-matrix__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 18px clamp(20px, 2.4vw, 32px) 12px;
+  border-bottom: 1px solid var(--v1-line);
+}
+
+.scene-matrix__head h3 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(18px, 1.7vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.scene-matrix__head span {
+  color: var(--v1-muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.scene-matrix__wrap {
+  overflow-x: auto;
+}
+
+.scene-matrix table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 720px;
+}
+
+.scene-matrix thead th {
+  padding: 12px clamp(14px, 1.6vw, 22px);
+  border-bottom: 1px solid var(--v1-line-strong);
+  color: var(--brand-blue-deep);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+.scene-matrix thead th:first-child {
+  width: 27%;
+}
+
+.scene-matrix tbody tr {
+  border-top: 1px solid var(--v1-line);
+}
+
+.scene-matrix tbody tr:first-child {
+  border-top: 0;
+}
+
+.scene-matrix tbody th,
+.scene-matrix tbody td {
+  padding: 12px clamp(14px, 1.6vw, 22px);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
+  vertical-align: top;
+}
+
+.scene-matrix tbody th strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+
+.scene-matrix tbody th small {
+  color: var(--v1-muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.scene-matrix tbody td {
+  color: rgb(23 23 29 / 0.68);
+  border-left: 1px solid var(--v1-line);
+}
