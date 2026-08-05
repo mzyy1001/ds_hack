@@ -632,3 +632,26 @@ html {
     transition: none;
   }
 }
+
+/* v2.1 typography fixes: longer season-era labels */
+.reward-heading h1 {
+  font-size: clamp(42px, 5.9vw, 90px);
+}
+
+.prize-table thead th:nth-child(1) {
+  width: 32%;
+}
+
+.prize-table thead th:nth-child(2) {
+  width: 10%;
+}
+
+.prize-table tbody th strong {
+  font-size: clamp(24px, 2.3vw, 36px);
+}
+
+.prize-table thead th:nth-child(2),
+.prize-table tbody td:nth-child(2) {
+  padding-inline: 10px;
+  white-space: nowrap;
+}
