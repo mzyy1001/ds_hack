@@ -655,3 +655,61 @@ html {
   padding-inline: 10px;
   white-space: nowrap;
 }
+
+/* v2.2: track detail lines inside track cards */
+.case-flow--tracks {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-flow--tracks li::after {
+  content: none;
+}
+
+.case-flow--tracks li {
+  min-height: 0;
+  border-bottom: 1px solid var(--v1-line-strong);
+}
+
+.case-flow--tracks li:nth-child(even) {
+  border-right: 0;
+}
+
+.case-flow--tracks li:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.case-flow--tracks li p {
+  max-width: none;
+}
+
+.case-flow--tracks .track-detail {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgb(23 23 29 / 0.62);
+}
+
+.case-flow--tracks .track-detail strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--brand-blue-deep);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 860px) {
+  .case-flow--tracks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-flow--tracks li {
+    border-right: 0;
+    border-bottom: 1px solid var(--v1-line-strong);
+  }
+
+  .case-flow--tracks li:last-child {
+    border-bottom: 0;
+  }
+}
