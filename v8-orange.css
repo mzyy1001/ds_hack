@@ -1,0 +1,276 @@
+/*
+ * v8-orange.css — Web 端橙色 Demo 规范 视觉编译层
+ * 规范包：~/.claude/skills/pc-demo-design-guidelines
+ * 只覆盖视觉 token 与标准组件呈现；不改 DOM、内容、交互。
+ */
+
+:root {
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --brand-blue: #ff5900;
+  --brand-blue-deep: #d64b00;
+  --brand-blue-soft: #fff7f4;
+  --brand-blue-wash: #fff7f4;
+
+  --surface: #fcfcfc;
+  --surface-raised: #ffffff;
+  --surface-tint: #f9f8fb;
+  --text: #142033;
+  --text-soft: #64748b;
+  --muted: #64748b;
+  --dim: #94a3b8;
+  --border: #f4f5f7;
+  --border-strong: #e5e7eb;
+  --line: #f4f5f7;
+  --line-strong: #e5e7eb;
+  --v1-muted: #64748b;
+
+  --accent-blue: #ff5900;
+  --accent-cyan: #ff5900;
+  --accent-mint: #2fc798;
+  --accent-yellow: #ffaa1a;
+  --accent-coral: #ff5658;
+  --accent-violet: #795aff;
+
+  --grad-primary: linear-gradient(274deg, #795aff -12.25%, #5a8cff 99.85%);
+}
+
+body {
+  background: #fcfcfc;
+  font-family: var(--sans);
+  color: #142033;
+}
+
+/* ---- 品牌区：橙色 logo 瓦片（内嵌本包 ds-glyph） ---- */
+.brand-mark-tile {
+  background: #ff5900;
+  border-radius: 8px;
+}
+
+.brand-mark-tile img {
+  filter: none;
+}
+
+/* ---- 顶部导航：选中/悬停用橙色 ---- */
+.desktop-nav--v1 a:hover,
+.desktop-nav--v1 a:focus-visible,
+.desktop-nav--v1 a[aria-current] {
+  color: #ff5900;
+}
+
+/* ---- 主按钮：内容区主操作 → 局部辅助蓝紫渐变（不使用橙色） ---- */
+.header-apply,
+.primary-action,
+.kv-apply,
+.submit-action,
+.dialog-confirm {
+  background: var(--grad-primary);
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.header-apply:hover,
+.primary-action:hover,
+.submit-action:hover {
+  background: var(--grad-primary);
+  filter: brightness(1.05);
+  color: #fff;
+}
+
+.secondary-action {
+  background: #f4f2ff;
+  border: 1px solid #f4f5f7;
+  border-radius: 10px;
+  color: #795aff;
+}
+
+/* ---- 主视觉 KV：蓝色系资产整体转橙 ---- */
+.kv-field {
+  filter: hue-rotate(163deg) saturate(1.05);
+}
+
+/* ---- 卡片：禁止单侧强调线 / 重阴影，圆角 20px ---- */
+.case-flow li,
+.plain-feature-list article,
+.schedule-card,
+.compute-fact,
+.team-mode-card {
+  box-shadow: none;
+}
+
+.case-flow,
+.case-example,
+.scene-matrix,
+.prize-table-wrap {
+  border: 1px solid #f4f5f7;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgb(15 23 42 / 0.04);
+}
+
+.case-flow li {
+  border-color: #f4f5f7;
+}
+
+.team-rule {
+  background: #f9f8fb;
+  border: 1px solid #f4f5f7;
+  border-radius: 12px;
+}
+
+.team-rule span {
+  color: #ff5900;
+  font-size: 12px;
+}
+
+/* ---- 表格：表头 #F9F8FB、描边 #F4F5F7、无彩色行底、无投影 ---- */
+.prize-table thead th {
+  background: #f9f8fb;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.prize-table tbody tr,
+.prize-table tbody tr:first-child,
+.prize-table tbody tr:nth-child(2),
+.prize-table tbody tr:nth-child(3) {
+  background: #ffffff;
+  border-top: 1px solid #f4f5f7;
+  box-shadow: none;
+}
+
+.prize-table tbody tr:first-child th,
+.prize-table tbody tr:first-child td,
+.prize-table tbody tr:first-child td strong,
+.prize-table tbody tr:first-child th span,
+.prize-table tbody tr:first-child td small {
+  color: #142033;
+}
+
+.prize-table td strong {
+  color: #142033;
+}
+
+.prize-table td,
+.prize-table tbody th {
+  color: #64748b;
+}
+
+.prize-table tbody th strong {
+  color: #142033;
+}
+
+.prize-table tbody th span,
+.prize-table td small,
+.prize-table thead th {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.scene-matrix thead th {
+  background: #f9f8fb;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.scene-matrix tbody th small,
+.scene-matrix__head span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.scene-matrix tbody td,
+.scene-matrix tbody th,
+.scene-matrix tbody tr {
+  border-color: #f4f5f7;
+}
+
+.scene-matrix tbody td {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ---- 12px 最小可见文字 ---- */
+.mono-label,
+.section-rail small,
+.schedule-time,
+.schedule-task span,
+.schedule-deliverable span,
+.hero-partner-strip__label small,
+.hero-partner-strip__label span,
+.hero-mini-logo span,
+.hero-support-logo-item,
+.partner-group-head span,
+.lead-partners span,
+.case-brief span,
+.case-example__head span,
+.case-example__runbook span,
+.track-detail,
+.track-detail strong,
+.footer-meta,
+.form-note,
+.draft-status,
+.choice-sub,
+.action-code,
+.reward-note,
+.compute-copy .mono-label,
+.school-card figcaption,
+.prize-table tbody th span {
+  font-size: 12px;
+}
+
+.case-flow header small,
+.case-flow header span,
+.team-mode-card header small,
+.team-mode-card header span,
+.schedule-index {
+  font-size: 12px;
+}
+
+/* ---- 页脚：中性深色，去蓝色氛围 ---- */
+.site-footer {
+  background: #142033;
+}
+
+/* ---- 表单控件：12px 圆角输入 ---- */
+.application-form input,
+.application-form select,
+.application-form textarea {
+  border-radius: 12px;
+}
+
+.choice {
+  border-radius: 12px;
+}
+
+/* ---- 决赛门槛条：浅橙底信息块（替代大面积橙块） ---- */
+.final-rule {
+  background: #fff7f4;
+  border: 1px solid #f4f5f7;
+  border-radius: 12px;
+}
+
+.final-rule span {
+  color: #ff5900;
+  font-size: 12px;
+}
+
+.final-rule strong {
+  color: #142033;
+}
+
+/* ---- 报名区与全局节背景统一 #FCFCFC ---- */
+.application,
+.application-v1,
+.clarity-section,
+.hero {
+  background-color: #fcfcfc;
+}
+
+.application-intro .mono-label {
+  color: #ff5900;
+}
