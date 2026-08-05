@@ -658,7 +658,7 @@ html {
 
 /* v2.2: track detail lines inside track cards */
 .case-flow--tracks {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .case-flow--tracks li::after {
@@ -667,15 +667,11 @@ html {
 
 .case-flow--tracks li {
   min-height: 0;
-  border-bottom: 1px solid var(--v1-line-strong);
-}
-
-.case-flow--tracks li:nth-child(even) {
-  border-right: 0;
-}
-
-.case-flow--tracks li:nth-last-child(-n + 2) {
   border-bottom: 0;
+}
+
+.case-flow--tracks li:last-child {
+  border-right: 0;
 }
 
 .case-flow--tracks li p {
@@ -710,6 +706,7 @@ html {
   }
 
   .case-flow--tracks li:last-child {
+    border-right: 0;
     border-bottom: 0;
   }
 }
@@ -806,4 +803,21 @@ html {
 .scene-matrix tbody td {
   color: rgb(23 23 29 / 0.68);
   border-left: 1px solid var(--v1-line);
+}
+
+/* v3.0: Dongshi organizer logo (orange lockup, keep original colors) */
+.hero-mini-logo--organizer img {
+  width: min(100%, 150px);
+  height: 36px;
+  object-fit: contain;
+  object-position: left center;
+  filter: none;
+}
+
+.lead-partners article:first-child img {
+  width: min(100%, 230px);
+  height: 60px;
+  object-fit: contain;
+  object-position: left center;
+  filter: none;
 }
