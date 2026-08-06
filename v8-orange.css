@@ -274,3 +274,13 @@ body {
 .application-intro .mono-label {
   color: #ff5900;
 }
+
+/* ---- 新增合作方 logo：白底位图统一收纳 ---- */
+.company-logo-art img {
+  filter: none;
+}
+
+.company-logo-grid figure {
+  background: #ffffff;
+  border-radius: 12px;
+}
