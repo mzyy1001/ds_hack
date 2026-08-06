@@ -284,3 +284,19 @@ body {
   background: #ffffff;
   border-radius: 12px;
 }
+
+/* ---- 首屏合作方条：11 家 logo 两行排布 ---- */
+.hero-support-logos {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  row-gap: 10px;
+}
+
+.hero-support-logos .hero-support-logo-item {
+  height: 36px;
+}
+
+.hero-support-logos .hero-support-logo-item img {
+  height: 28px;
+  max-height: 28px;
+  max-width: 120px;
+}
