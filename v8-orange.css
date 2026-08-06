@@ -300,3 +300,21 @@ body {
   max-height: 28px;
   max-width: 120px;
 }
+
+/* ---- 发起机构块：动势之下的联合高校行 ---- */
+.organizer-schools {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.organizer-schools img {
+  width: auto;
+  height: 22px;
+  max-width: 86px;
+  object-fit: contain;
+  filter: none;
+}
