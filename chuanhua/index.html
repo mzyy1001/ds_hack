@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="AI 架构师场景大赛 · 传化专场——动势科技主办、传化集团独家命题。9 月 5–6 日 Hackathon 主赛提交项目，约 5 支队伍晋级，9 月 20 日决赛路演决出前三。" />
+<meta name="theme-color" content="#fcfcfc" />
+<title>AI 架构师场景大赛 · 传化专场</title>
+<link rel="icon" href="../assets/brand/mark.png" />
+<style>
+  :root {
+    --orange: #ff5900;
+    --orange-deep: #d64b00;
+    --orange-wash: #fff7f4;
+    --grad: linear-gradient(274deg, #795aff -12.25%, #5a8cff 99.85%);
+    --bg: #fcfcfc;
+    --card: #ffffff;
+    --text: #142033;
+    --text-2: #64748b;
+    --text-3: #94a3b8;
+    --line: #f4f5f7;
+    --line-2: #e5e7eb;
+    --panel: #f9f8fb;
+    --shadow: 0 2px 4px rgb(15 23 42 / 0.04);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; }
+
+  .shell { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: rgb(252 252 252 / 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-2);
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 12px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+  .brand-tile {
+    display: grid; place-items: center;
+    width: 34px; height: 34px; border-radius: 8px; background: var(--orange);
+  }
+  .brand-tile img { width: 22px; height: 22px; object-fit: contain; }
+  .top-cta {
+    display: inline-block; padding: 9px 20px; border-radius: 10px;
+    background: var(--grad); color: #fff; font-weight: 600; font-size: 13px;
+  }
+
+  /* Hero */
+  .hero { padding: 64px 0 40px; }
+  .hero-kicker {
+    color: var(--orange); font-weight: 700; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .hero h1 { font-size: clamp(30px, 4.6vw, 52px); line-height: 1.25; letter-spacing: 0.01em; }
+  .hero h1 small { display: block; font-size: 0.44em; color: var(--text-2); font-weight: 500; margin-top: 10px; }
+  .hero-dates {
+    display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 30px;
+  }
+  .hero-date {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: var(--shadow); padding: 14px 20px; min-width: 180px;
+  }
+  .hero-date b { display: block; font-size: 20px; }
+  .hero-date span { color: var(--text-2); font-size: 12px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn-primary {
+    display: inline-block; padding: 13px 30px; border-radius: 10px;
+    background: var(--grad); color: #fff; font-weight: 700; font-size: 15px;
+  }
+  .hero-note { color: var(--text-3); font-size: 12px; }
+  .hero-orgs {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px;
+    margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--line-2);
+  }
+  .hero-orgs .org { display: flex; align-items: center; gap: 10px; }
+  .hero-orgs .org span { color: var(--text-3); font-size: 12px; }
+  .hero-orgs img { height: 34px; width: auto; object-fit: contain; }
+
+  /* Sections */
+  section { padding: 44px 0; }
+  .sec-label { color: var(--orange); font-weight: 700; font-size: 12px; letter-spacing: 0.12em; margin-bottom: 8px; }
+  .sec-title { font-size: clamp(22px, 3vw, 30px); margin-bottom: 8px; }
+  .sec-lead { color: var(--text-2); max-width: 720px; margin-bottom: 26px; }
+
+  /* Timeline */
+  .timeline { display: grid; gap: 14px; }
+  .t-item {
+    display: grid; grid-template-columns: 150px 1fr; gap: 18px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: var(--shadow); padding: 20px 24px;
+  }
+  .t-item.hot { border-color: rgb(255 89 0 / 0.35); background: var(--orange-wash); }
+  .t-when b { display: block; font-size: 17px; }
+  .t-when span { color: var(--orange); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+  .t-body h3 { font-size: 15px; margin-bottom: 4px; }
+  .t-body p { color: var(--text-2); font-size: 13px; }
+
+  /* Cards grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    box-shadow: var(--shadow); padding: 24px;
+  }
+  .card h3 { font-size: 15px; margin-bottom: 8px; }
+  .card p { color: var(--text-2); font-size: 13px; }
+  .tbd {
+    display: inline-block; margin-bottom: 10px; padding: 3px 10px; border-radius: 999px;
+    background: var(--orange-wash); color: var(--orange); font-size: 12px; font-weight: 700;
+  }
+
+  /* Submission checklist */
+  .check-panel {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 24px 28px;
+  }
+  .check-panel ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px 24px; }
+  .check-panel li { padding-left: 22px; position: relative; color: var(--text-2); font-size: 13px; }
+  .check-panel li::before { content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+  .reject {
+    margin-top: 16px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--card); color: var(--text-2); font-size: 13px;
+  }
+  .reject b { color: var(--text); }
+
+  /* Footer */
+  footer {
+    margin-top: 30px; padding: 30px 0 40px; background: #142033; color: rgb(255 255 255 / 0.75);
+    font-size: 12px;
+  }
+  .foot-inner { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+  .foot-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 700; font-size: 14px; }
+  .foot-brand .brand-tile { width: 30px; height: 30px; }
+
+  @media (max-width: 640px) {
+    .t-item { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-tile"><img src="../assets/brand/ds-glyph.svg" alt="" /></span>
+      <span>AI 架构师场景大赛 · 传化专场</span>
+    </a>
+    <a class="top-cta" href="#join">报名通道即将开放</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="shell">
+      <p class="hero-kicker">AI NATIVE · SINGLE-SPONSOR CHALLENGE</p>
+      <h1>AI 架构师场景大赛<small>传化专场 —— 传化集团独家命题，把真实产业场景做成可运行的 Agent 产品</small></h1>
+      <div class="hero-dates">
+        <div class="hero-date"><span>主赛 HACKATHON</span><b>9 月 5–6 日</b><span>集中开发 · 提交项目</span></div>
+        <div class="hero-date"><span>晋级公布</span><b>评审周后</b><span>约 5 支队伍晋级决赛</span></div>
+        <div class="hero-date"><span>决赛 BIG MEET</span><b>9 月 20 日</b><span>终极路演 · 决出前三</span></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#join">立即关注报名</a>
+        <span class="hero-note">面向在校生 · 1–5 人自由组队（拟定）</span>
+      </div>
+      <div class="hero-orgs">
+        <div class="org"><span>主办</span><img src="../assets/brand/dongshi-logo.png" alt="动势科技" /></div>
+        <div class="org"><span>独家命题</span><img src="../assets/partners/transfar-logo.png" alt="传化集团" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="shell">
+      <p class="sec-label">SCHEDULE / 赛程</p>
+      <h2 class="sec-title">两个周末，一次完整交付</h2>
+      <p class="sec-lead">9 月 5–6 日 Hackathon 完成开发并提交项目；一周评审选出约 5 支晋级队伍；一周决赛冲刺完善产品；9 月 20 日决赛路演决出前三名。</p>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-when"><span>REGISTER</span><b>即日 – 9.4</b></div>
+          <div class="t-body"><h3>报名与组队</h3><p>提交报名信息并完成组队；赛道公布后选择方向。</p></div>
+        </div>
+        <div class="t-item hot">
+          <div class="t-when"><span>HACK · 主赛</span><b>9.5 – 9.6</b></div>
+          <div class="t-body"><h3>Hackathon 集中开发 + 提交项目</h3><p>围绕传化真实场景开发完整端到端 Agent 产品；结束时提交可运行 Demo、代码仓库与技术说明。</p></div>
+        </div>
+        <div class="t-item">
+          <div class="t-when"><span>REVIEW</span><b>9.7 – 9.13</b></div>
+          <div class="t-body"><h3>评审周</h3><p>评委（含传化业务负责人）评估全部提交项目，选出约 5 支晋级队伍。</p></div>
+        </div>
+        <div class="t-item">
+          <div class="t-when"><span>SPRINT</span><b>9.14 – 9.19</b></div>
+          <div class="t-body"><h3>决赛冲刺周</h3><p>晋级队伍完善产品、打磨最终路演。</p></div>
+        </div>
+        <div class="t-item hot">
+          <div class="t-when"><span>FINAL · BIG MEET</span><b>9.20</b></div>
+          <div class="t-body"><h3>决赛路演，决出前三</h3><p>最终 Pitch + 现场产品实测，评审团决出前三名。表达能力不能弥补产品不可用。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracks">
+    <div class="shell">
+      <p class="sec-label">TRACKS / 赛道</p>
+      <h2 class="sec-title">全部赛道由传化集团命题</h2>
+      <p class="sec-lead">本次为单企业命题赛：所有赛道均来自传化集团的真实业务场景，配套脱敏数据、业务规则与对接支持。具体赛道即将公布。</p>
+      <div class="grid">
+        <div class="card"><span class="tbd">即将公布</span><h3>赛道方向</h3><p>候选业务域：物流与供应链、化工新材料、智能制造、企业内部效率等——以传化最终发布为准。</p></div>
+        <div class="card"><span class="tbd">即将公布</span><h3>场景资源</h3><p>脱敏业务数据、规则文档、Mock 接口与传化业务负责人 Office Hours。</p></div>
+        <div class="card"><span class="tbd">即将公布</span><h3>奖项设置</h3><p>决赛决出前三名；具体奖金与实习/招聘权益确认后公布。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="submit">
+    <div class="shell">
+      <p class="sec-label">DELIVERABLE / 提交标准</p>
+      <h2 class="sec-title">完整端到端 Agent 产品</h2>
+      <p class="sec-lead">Hackathon 结束时提交，评审周据此评估：</p>
+      <div class="check-panel">
+        <ul>
+          <li>明确的目标用户与使用场景</li>
+          <li>可运行应用或线上访问链接</li>
+          <li>完整的输入到输出工作流</li>
+          <li>至少一个实质集成（工具 / API / 数据）</li>
+          <li>能执行任务的 Agent，而非仅聊天界面</li>
+          <li>基本异常处理与失败恢复</li>
+          <li>代码仓库与开发过程记录</li>
+          <li>简版架构图与技术说明</li>
+          <li>已知限制与安全边界说明</li>
+        </ul>
+        <div class="reject"><b>直接拒绝：</b>仅 PPT、纯概念、不可运行界面稿、预录演示、无实质任务执行链路的聊天套壳。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="shell">
+      <p class="sec-label">JOIN / 报名</p>
+      <h2 class="sec-title">报名通道即将开放</h2>
+      <p class="sec-lead">赛道、奖项与报名链接确认后将在本页统一公布。面向在校生（本科、硕士、博士），1–5 人自由组队，1 人可独立参赛（拟定）。</p>
+      <a class="btn-primary" href="#top">敬请期待</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell foot-inner">
+    <div class="foot-brand">
+      <span class="brand-tile"><img src="../assets/brand/ds-glyph.svg" alt="" /></span>
+      <span>AI 架构师场景大赛 · 传化专场</span>
+    </div>
+    <span>主办：动势科技 · 独家命题：传化集团 · © 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
